@@ -18,7 +18,7 @@ data class AccountEntity(
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo(collate = NOCASE) val email: String,
     val password: String,
-    @ColumnInfo(name = "created_at") val createdAt: String
+    @ColumnInfo(name = "created_at") val createdAt: Long
 ) {
 
     fun toAccount(): Account = Account(
