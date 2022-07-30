@@ -10,8 +10,8 @@ interface AccountDao {
     fun createAccount(accountEntity: AccountEntity)
 
     @Query("SELECT * FROM accounts WHERE email = :email")
-    fun getAccountByEmail(email: String): AccountEntity
+    fun getAccountByEmail(email: String): AccountEntity?
 
     @Query("SELECT * FROM accounts WHERE id = :id")
-    fun getAccountById(id: Long): AccountEntity
+    fun getAccountById(id: Long): AccountEntity?
 }

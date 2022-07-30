@@ -10,12 +10,12 @@ class AccountRepository(private val context: Context) {
         AppDatabase.getInstance(context)
     }
 
-    fun getAccountByEmail(email: String): Account{
-        return db.getAccountDao().getAccountByEmail(email).toAccount()
+    fun getAccountByEmail(email: String): Account?{
+        return db.getAccountDao().getAccountByEmail(email)?.toAccount()
     }
 
-    fun getAccountById(id: Long): Account{
-        return db.getAccountDao().getAccountById(id).toAccount()
+    fun getAccountById(id: Long): Account?{
+        return db.getAccountDao().getAccountById(id)?.toAccount()
     }
 
     fun createAccount(account: Account){
